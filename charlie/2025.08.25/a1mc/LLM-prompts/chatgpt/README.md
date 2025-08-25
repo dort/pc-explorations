@@ -1,0 +1,1 @@
+agi@subdude.io is the account i logged into chatgpt with (credentials saved in my ed25.g chrome profile) to do this work

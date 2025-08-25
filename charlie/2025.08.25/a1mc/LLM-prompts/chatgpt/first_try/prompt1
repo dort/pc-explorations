@@ -1,0 +1,1 @@
+I am looking to create a neural predictive code based model that I can train using the MNIST character dataset in order to learn how to classify with as much accuracy as possible those handwritten characters. It will be necessary to use the NACLab codebase leveraging JAX in python to do all this. Will the LLM powering ChatGPT be able to help me with this?
