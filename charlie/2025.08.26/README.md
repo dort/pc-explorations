@@ -1,0 +1,1 @@
+So this is to try to prepare for porting the codebase associated with https://github.com/Monadillo/pcn-intro from using torch to instead using JAX to see if a speedup can be accomplished.
