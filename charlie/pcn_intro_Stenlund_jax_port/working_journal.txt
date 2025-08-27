@@ -127,3 +127,10 @@ Test Top-3 Accuracy: 100.00%
 so interesting...
 
 i hadn't noticed those final steps (prior I think I'd only plotted using that first code block after testing the results and not scrolled all the way down)
+
+
+6:41am
+
+very interesting...
+
+My plan didn't work. Even without installing the jax cuda12 version, torch is choosing cpu instead of cuda device for training (i stopped the process as there's no need to go through 49 more minutes in a 2nd training)
