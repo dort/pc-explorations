@@ -1,0 +1,40 @@
+2025.08.27 5:05am
+
+I'm just wanting to get as much recorded as to how I'm going about this.
+
+I suspect I will initially do a lot of experimentation that won't get checked into the repo, but my hope is that I'll just note what I try and what the results are here.
+
+At this point I've copied over only 5 files into original/ just to have a record of where I started:
+
+ni@rogr:~/repos/pc-explorations/charlie/pcn_intro_Stenlund_jax_port$ ls -latr original
+total 84240
+-rw-r--r--. 1 ni ni     2735 Aug 25 20:25 README.md
+-rw-r--r--. 1 ni ni     1066 Aug 25 20:25 LICENSE
+-rw-r--r--. 1 ni ni   735706 Aug 25 20:25 pcn_intro.pdf
+-rw-r--r--. 1 ni ni 14310640 Aug 25 20:25 pcn_model_statedict.pth
+-rw-r--r--. 1 ni ni 71203883 Aug 26 15:52 pcn_cifar10_notebook.ipynb
+drwxr-xr-x. 1 ni ni      156 Aug 27 05:01 .
+drwxr-xr-x. 1 ni ni      146 Aug 27 05:08 ..
+ni@rogr:~/repos/pc-explorations/charlie/pcn_intro_Stenlund_jax_port$ 
+
+and I've also now put what I think is "necessary" into this current directory:
+
+ni@rogr:~/repos/pc-explorations/charlie/pcn_intro_Stenlund_jax_port$ ls -latr
+total 69564
+-rw-r--r--. 1 ni ni     2790 Aug 27 04:51 README.md
+drwxr-xr-x. 1 ni ni        0 Aug 27 04:54 data
+drwxr-xr-x. 1 ni ni       74 Aug 27 04:59 ..
+drwxr-xr-x. 1 ni ni      156 Aug 27 05:01 original
+-rw-r--r--. 1 ni ni 71203883 Aug 27 05:02 pcn_cifar10_notebook.ipynb
+-rw-r--r--. 1 ni ni      999 Aug 27 05:11 working_journal.txt
+-rw-r--r--. 1 ni ni    19555 Aug 27 05:15 LICENSE
+drwxr-xr-x. 1 ni ni      146 Aug 27 05:15 .
+ni@rogr:~/repos/pc-explorations/charlie/pcn_intro_Stenlund_jax_port$ ls -latr data
+total 0
+drwxr-xr-x. 1 ni ni   0 Aug 27 04:54 .
+drwxr-xr-x. 1 ni ni 146 Aug 27 05:15 ..
+ni@rogr:~/repos/pc-explorations/charlie/pcn_intro_Stenlund_jax_port$
+
+The new license file is bigger than the original because I've appended the GPLv2 to the MIT which Monadillo released it under.
+
+5:17am I'll check in to github in this current state and then pull it down into a brand new environment and do a "test" to see if it still works, reporting back here my results (ideally, everything will be successfull with trying to run the current code in the pcn_cifar10_notebook.ipynb that is here in this directory once I get a new venv set up that includes all the dependencies) after trying that (but not keeping anything that results and just discarding it).
