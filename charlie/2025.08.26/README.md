@@ -1,5 +1,6 @@
 So this is to try to prepare for porting the codebase associated with https://github.com/Monadillo/pcn-intro from using torch to instead using JAX to see if a speedup can be accomplished.
 
+One day after creating this specific file (my first step), i am about to rename the containing directory from yesterday's date (2025.08.26) to be project specific so I can also move the code over and begin to work directly on it.
 
 The codebase is a jupyter/colab notebook, so in blocks, not files.
 
