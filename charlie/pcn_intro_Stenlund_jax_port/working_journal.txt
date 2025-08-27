@@ -38,3 +38,43 @@ ni@rogr:~/repos/pc-explorations/charlie/pcn_intro_Stenlund_jax_port$
 The new license file is bigger than the original because I've appended the GPLv2 to the MIT which Monadillo released it under.
 
 5:17am I'll check in to github in this current state and then pull it down into a brand new environment and do a "test" to see if it still works, reporting back here my results (ideally, everything will be successfull with trying to run the current code in the pcn_cifar10_notebook.ipynb that is here in this directory once I get a new venv set up that includes all the dependencies) after trying that (but not keeping anything that results and just discarding it).
+
+
+5:45am I just shared the following update in a MM post with Matthew Behrend but it seems worthwhile to log it here too:
+
+The first problem I seem to have come up against (which is an interesting one?) is that in the new venv I created in which I pip installed jax with cuda12 support, then also all the dependencies for the original, i've suddenly found that doing a baseline test run, with my only changes to the notebook file being I now have added:
+
+import jax 
+import jax.numpy as jnp
+
+to the initial codeblock of imports, but making no other changes at all, when running the blocks in vscode one by one i got no errors or problems at all until I got down to the model training block, at which point a warning was thrown and my device being used is no longer cuda but is just my cpu
+
+here's the warning:
+
+Using device: cpu
+Starting PCN training...
+Epoch 1 / 4
+  0%|          | 0/100 [00:00<?, ?it/s]/home/ni/sandboxen/virt-environs/s-m-pcn-intro-jax-test1/lib64/python3.13/site-packages/torch/utils/data/dataloader.py:666: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+/home/ni/sandboxen/virt-environs/s-m-pcn-intro-jax-test1/lib64/python3.13/site-packages/torch/amp/autocast_mode.py:266: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+100%|██████████| 100/100 [11:48<00:00,  7.09s/it]
+Epoch 2 / 4 
+
+</end paste from MatterMost DM>
+
+5:47am Obviously this is going to make testing excruciatingly slow if I can't solve this problem (though I can live with that if I have to (much less than ideal though))
+
+5:49am  For the sake of documenting the hell out of things, the venv in which I tried to install jax w/cuda12 is this one:
+
+ni@rogr:~/sandboxen/virt-environs/s-m-pcn-intro-jax-test1$
+
+Perhaps it's only possible for one loaded python framework to get access to the GPU?
+
+Maybe the way to go then is to not try to use the cuda version of JAX immediately?
+
+So let me try that.
+
+To install the non-cuda jax in a new venv along with all the torch stuff.
+
+
