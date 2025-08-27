@@ -78,3 +78,52 @@ So let me try that.
 To install the non-cuda jax in a new venv along with all the torch stuff.
 
 
+6:07am
+
+All set w/this new venv:
+
+(s-m-pcn-intro-jax-test2) ni@rogr:~/sandboxen/virt-environs/s-m-pcn-intro-jax-test2$ 
+
+
+Now it's just a matter of waiting for this slow run to complete (it's more than 3/4 of the way done).
+
+
+6:25am
+
+i stepped afk and it finished: 49m 0.8s
+
+12 seconds to compute test accuracies:
+
+Test Top-1 Accuracy: 99.94%
+Test Top-3 Accuracy: 100.00%
+
+
+# How to load saved weights back into an identical model structure:
+
+# Step 1: Recreate the model with the same architecture
+# model_reloaded = PredictiveCodingNetwork(dims=layer_dims, output_dim=output_dim)
+
+# OPTION 1 - load the weights from the GitHub repo mentioned in the manuscript
+# from torch.hub import load_state_dict_from_url
+# url = 'https://github.com/Monadillo/pcn-intro/raw/374774c6c493d419f266ab4fc305228a0dedae0b/pcn_model_statedict.pth'
+# state_dict = load_state_dict_from_url(url, map_location='cpu')
+# model_reloaded.load_state_dict(state_dict)
+
+# OPTION 2 - load weights from a file you have saved locally
+# save_path = 'pcn_model_statedict.pth' # or similar
+# state_dict = torch.load(save_path, map_location='cpu')
+# model_reloaded.load_state_dict(state_dict)
+
+# Step 2: Move model to GPU if available
+# if torch.cuda.is_available():
+#    model_reloaded.to('cuda')
+
+# Step 3: Set to evaluation mode (if the intention is to do inference only)
+# model_reloaded.eval()
+
+
+6:29am
+
+so interesting...
+
+i hadn't noticed those final steps (prior I think I'd only plotted using that first code block after testing the results and not scrolled all the way down)
