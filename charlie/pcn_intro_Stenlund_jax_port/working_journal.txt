@@ -141,3 +141,16 @@ My plan didn't work. Even without installing the jax cuda12 version, torch is ch
 And my next attempt failed too (commenting out the jax imports).
 
 Fascinating...
+
+
+7:45am
+
+so fascinating
+
+i documented it via private DMs to Matthew on MM instead of here but a lot of fussing to figure out that vscode "holds onto" something (whether via caching or CUDA weirdness or...)
+
+It in fact is possible to use a venv in which the non-cuda version (cpu only) version of jax is loaded, and it's even possible to import jax into the python notebook file.
+
+So all good (it just took a long time to figure this out due to a reboot being needed (maybe there's some other way to solve this, but I don't really care at the moment and just need to get to heading back into the coding directly now that the path forward is clean and the one I
+was hoping for (well, i was hoping that both torch and jax could access the GPU in the same python venv, but...))).
+
